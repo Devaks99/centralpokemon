@@ -1,0 +1,43 @@
+/* html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Mooli', sans-serif;
+    }
+    
+    /* todo corpo da pagina (header, body, main e footer)*/
+body{
+    height: 500vh;
+    background-image: linear-gradient(182deg, #2286ea, #2e9beb, #32b0ec, #31c6ec,#67baff,#7ac3ff);
+}
+
+
+
+/* cor da barra de navegação */
+.navbar{
+    background-color: #fffdfd52;
+    height: 100px;
+}
+
+/*caixa toda de navegação*/
+.navbar-nav{
+    margin-top: 20px;
+    margin: 100px;
+}
+
+
+    /* cor dos nomes da barra de navegação */
+.nav-link{
+    color: #fff;
+    font-size: 19px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* itens da barra de navegação quando passa o mouse em cima*/
+.nav-link:hover{
+    color: rgb(255, 239, 16)
+    
+}
+

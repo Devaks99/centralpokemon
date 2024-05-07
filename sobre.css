@@ -1,0 +1,131 @@
+/* html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Mooli', sans-serif;
+    }
+    
+
+    /* todo corpo da pagina (header, body, main e footer)*/
+body{
+    height: 1200vh;
+    /* background: no-repeat linear-gradient( to bottom, #36a5ff,#4eaefd,#67baff,#7ac3ff,#bbe0ff, #fff); */
+    /* background-image: url('https://i.pinimg.com/564x/a6/5c/db/a65cdb666647aca02e1d498c278f1754.jpg'); 
+    background-size: cover; 
+    background-position: center;  */
+    background-image: linear-gradient(182deg, #2286ea, #2e9beb, #32b0ec, #31c6ec,#67baff,#7ac3ff);
+}
+
+/* cor da barra de navegação */
+.navbar{
+    background-color: #fffdfd52;
+    height: 100px;
+}
+
+/*caixa toda de navegação*/
+.navbar-nav{
+    margin-top: 20px;
+    margin: 100px;
+}
+
+
+    /* cor dos nomes da barra de navegação */
+.nav-link{
+    color: #fff;
+    font-size: 19px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* itens da barra de navegação quando passa o mouse em cima*/
+.nav-link:hover{
+    color: rgb(255, 239, 16)
+    
+}
+
+
+/*Todas as imagens*/
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img-card{
+ /* display: inline-block; */
+ flex: 1 0 21%;
+ margin: 10px;
+ /* margin-top: 80px; */
+ transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+.img-card img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    border: 3px solid #000000c4;
+    border-radius: 4px;
+    display: block;
+}
+
+
+.img-card:hover {
+    transform: scale(1.1); /* Aumenta a escala em 10% */
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 430px;
+    max-height: 450%;
+  }
+  
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+
+  /* Regras de mídia para telas menores */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto; /* Altura automática */
+    }
+
+    .navbar {
+        height: 80px; /* Altura reduzida para telas menores */
+    }
+
+    .navbar-nav {
+        margin: 20px; /* Margem reduzida para telas menores */
+    }
+}
+
+/* Regras de mídia para telas maiores */
+@media screen and (min-width: 1200px) {
+    .img-card {
+        margin-top: 40px; /* Espaçamento reduzido para telas maiores */
+    }
+
+    .modal-content {
+        max-width: 600px; /* Largura aumentada para telas maiores */
+    }
+}

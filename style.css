@@ -1,0 +1,288 @@
+/* html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Mooli', sans-serif;
+    }
+    
+
+    /* todo corpo da pagina (header, body, main e footer)*/
+body{
+    height: 500vh;
+    background-image: linear-gradient(182deg, #2286ea, #2e9beb, #32b0ec, #31c6ec,#67baff,#7ac3ff);
+    
+}
+
+
+    /* cor da barra de navegação */
+.navbar{
+    background-color:  #fffdfd52;
+    height: 100px;
+}
+
+/*caixa toda de navegação*/
+.navbar-nav{
+    margin-top: 20px;
+    margin: 100px;
+}
+
+
+
+    /* cor dos nomes da barra de navegação */
+.nav-link{
+    color: #fff;
+    font-size: 19px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* itens da barra de navegação quando passa o mouse em cima*/
+.nav-link:hover{
+    color: rgb(255, 239, 16)
+    
+}
+
+
+ 
+/* Regras CSS para telas menores */
+@media screen and (max-width: 768px) {
+    /* Reduz a altura do corpo da página */
+    body {
+        height: auto;
+    }
+
+    /* Ajusta o espaçamento da barra de navegação */
+    .navbar {
+        height: 80px;
+    }
+
+    /* Ajusta a margem da navegação */
+    .navbar-nav {
+        margin: 20px;
+    }
+
+    /* Ajusta o tamanho e a margem do carrossel */
+    .carousel-item {
+        width: 100%;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Regras CSS para telas maiores */
+@media screen and (min-width: 769px) {
+    /* Define a altura do corpo da página para 500vh */
+    body {
+        height: 500vh;
+    }
+
+    /* Mantém a altura da barra de navegação em 100px */
+    .navbar {
+        height: 100px;
+    }
+
+    /* Mantém a margem da navegação em 100px */
+    .navbar-nav {
+        margin: 100px;
+    }
+
+
+
+
+    /* Mantém o tamanho e a margem do carrossel em 1000px e 140px respectivamente */
+    .carousel-item {
+        width: 1000px;
+        margin-left: 140px;
+        margin-top: 10px;
+        position: relative;
+        border: 4px solid #ffffff81;
+    }
+}
+
+  /* Estilos para as imagens no carrossel */
+  .carousel-item img {
+    height: 530px; /* Defina a altura desejada para as imagens */
+    object-fit: cover; /* Garante que as imagens mantenham proporções e preencham o espaço */
+}
+
+
+
+
+/* div para os cards */
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    gap: 30px;
+}
+ /* fim da div */
+
+
+
+
+/* interação dos cards */
+.card {
+    max-width: 540px;
+    transition: transform 0.3s ease; 
+  }
+
+  .card:hover {
+    transform: scale(1.02); 
+  }
+/* fim da interação */
+
+
+
+/* para a frase após o carrossel */
+   .word{
+    align-items: center;
+    justify-content: center;
+    margin-left: 320px;
+    margin-top: 80px;
+    color: #fff;
+   }
+
+   .word h1 {
+    font-weight: bold; /* Define o texto em negrito */
+  }
+/* fim da esterilização */
+   
+
+
+
+/* card pikachu */
+.card-title{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-body{
+   font-size: 14px;
+}
+/* final do card pikachu */
+
+
+
+/* configuraçoes dos Gifs */
+.image-gif{
+    margin-top: 50px;
+    margin-left: 530px;
+}
+
+.image-gif2{
+    margin-top: -200px;
+    margin-left: 230px;
+}
+
+
+.image-gif3{
+    margin-top: -320px;
+    margin-left: 660px;
+}
+
+
+.image-button{
+    margin-top: -380px;
+    margin-left: 140px;
+}
+
+
+.image-vida-charizard{
+    margin-top: -165px;
+    margin-left: 536px;
+}
+
+.image-vida-frillish{
+    margin-top: -67px;
+    margin-left: 330px;
+}
+
+.image-estrela-charizard{
+    margin-top: -40px;
+    margin-left: 600px;
+}
+
+.image-estrela-frillish{
+    margin-top: -78px;
+    margin-left: 340px;
+}
+
+.image-controle{
+    margin-top: 70px;
+    margin-left: 135px;
+}
+
+.image-controle-ps{
+    margin-top: -150px;
+    margin-left: 990px;
+}
+
+/* final */
+
+
+/* Fundo retangular gifs */
+.gif-container{
+    max-width: 80%;
+    height: 380px;
+    border: 5px solid #201f1fc2;
+    border-radius: 4px;
+    display: block;
+    margin-top: 40px;
+    background-image: url('https://i.pinimg.com/originals/0d/0f/0c/0d0f0c384be14928fd4dcb6ca7f0e6b5.jpg');
+    background-size: cover;
+    margin-left: 130px;
+}
+
+
+/* .image-ash-pikachu{
+    margin-left: 50px;
+    margin-top: 150px;
+} */
+
+/* .image-mensagem-ash{
+    margin-left: 180px;
+    margin-top: -550px;
+    position: absolute;
+    transition: transform 0.5s ease;
+} */
+
+
+
+/* interação do balão com a imagem do ash e pikachu */
+.container-balao {
+    position: relative;
+}
+
+.image-mensagem-ash {
+    position: absolute;
+    right: -400px; /* Posiciona o balão fora da tela, à direita */
+    top: 54%; /* Ajusta a posição vertical do balão */
+    transform: translateY(-50%);
+    transition: right 0.5s ease; /* Adiciona uma transição suave na propriedade 'right' */
+     
+}
+
+.image-ash-pikachu {
+    max-width: 450px;
+    max-height: 450px;
+    margin-top: 40px; /* Espaçamento entre a imagem e o balão */
+    margin-left: 300px;
+}
+
+.image-ash-pikachu img {
+    width: 70%;
+    height: auto;
+}
+
+.container-balao:hover .image-mensagem-ash {
+    right: 20px; /* Move o balão para a posição desejada quando o mouse está sobre o container */
+}
+/* final da interação do balão */
+
+.msg{
+    margin-top: -550px;
+    margin-left: 470px;
+}
