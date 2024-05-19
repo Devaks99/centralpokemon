@@ -505,11 +505,11 @@ body {
 /* Media query para telas menores */
 @media screen and (max-width: 768px) {
   .logo-pokebola {
-      max-width: 100px; /* Reduzindo a largura da imagem para telas menores */
+      max-width: 90px; /* Reduzindo a largura da imagem para telas menores */
   }
 
   .logo-central {
-      max-width: 200px; /* Reduzindo a largura da imagem para telas menores */
+      max-width: 180px; /* Reduzindo a largura da imagem para telas menores */
   }
 }
 .container {
