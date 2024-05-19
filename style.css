@@ -489,3 +489,56 @@ body {
 }
 
 /* final da esterilização da lista */
+
+/* Estilos novos */
+
+/* Estilo para a logo da pokebola */
+.logo-pokebola {
+  max-width: 150px; /* Largura máxima da imagem */
+}
+
+/* Estilo para a logo central */
+.logo-central {
+  max-width: 350px; /* Largura máxima da imagem */
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+  .logo-pokebola {
+      max-width: 100px; /* Reduzindo a largura da imagem para telas menores */
+  }
+
+  .logo-central {
+      max-width: 200px; /* Reduzindo a largura da imagem para telas menores */
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.video-ash-mensagem {
+  flex: 1;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 10px;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

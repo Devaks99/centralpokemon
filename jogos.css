@@ -14,30 +14,96 @@ body{
 
 
 
-/* cor da barra de navegação */
-.navbar{
+/* Estilo da navbar */
+.navbar {
     background-color: #fffdfd52;
-    height: 100px;
-}
-
-/*caixa toda de navegação*/
-.navbar-nav{
-    margin-top: 20px;
-    margin: 100px;
-}
-
-
-    /* cor dos nomes da barra de navegação */
-.nav-link{
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  /* Caixa de navegação */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Cor dos links na barra de navegação */
+  .nav-link {
     color: #fff;
     font-size: 19px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  /* Links na barra de navegação quando passa o mouse */
+  .nav-link:hover {
+    color: rgb(255, 239, 16);
+  }
+  
+  /* Estilo das logos */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-pokebola {
+    width: 56px;
+    height: auto;
+  }
+  
+  .logo-central {
+    max-height: 75px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  /* Media queries para responsividade */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .logo-container {
+      width: 100%;
+      justify-content: center;
+    }
+    .logo-pokebola {
+        max-width: 150px; /* Largura máxima da imagem */
+      }
+      
+      /* Estilo para a logo central */
+      .logo-central {
+        max-width: 350px; /* Largura máxima da imagem */
+      }
+      
+      /* Media query para telas menores */
+      @media screen and (max-width: 768px) {
+        .logo-pokebola {
+            max-width: 100px; /* Reduzindo a largura da imagem para telas menores */
+        }
+      
+        .logo-central {
+            max-width: 200px; /* Reduzindo a largura da imagem para telas menores */
 
-
-/* itens da barra de navegação quando passa o mouse em cima*/
-.nav-link:hover{
-    color: rgb(255, 239, 16)
-    
-}
+        }
+      }}
 
