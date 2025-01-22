@@ -63,7 +63,7 @@ a {
 
 p {
     font-size: 1rem;
-    color: rgb(170, 170, 170);
+    color: rgb(105, 98, 98);
 }
 
 .small-text {
@@ -336,12 +336,89 @@ span {
 /* footer */
 
 #footer {
-    margin-top: 100px;
+    margin-top: 160px;
     padding: 50px 0px 20px 0px;
     width: 100vw;
     background-color: #0f1113;
-    
+    height: auto; /* Ajustado para não ocupar 100% da altura */
 }
+
+footer .column p {
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+footer .column .socials {
+    display: flex;
+    justify-content: center; /* Alinha os itens horizontalmente */
+    gap: 1.5rem;
+    margin-bottom: 20px;
+}
+
+footer .column .socials a {
+    color: #ccc;
+    border: 2px solid #ccc;
+    padding: 12px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 48px;
+    height: 48px;
+}
+
+footer .column .socials a:hover {
+    color: #fff;
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: scale(1.15);
+    box-shadow: 0px 6px 12px rgba(29, 78, 216, 0.4);
+}
+
+/* Estilização dos títulos e links do footer */
+footer .column h4 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center; /* Centraliza o título */
+}
+
+footer .column > a {
+    display: block;
+    color: #ccc;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+footer .column > a:hover {
+    color: #1d4ed8;
+    transform: translateX(5px);
+}
+
+/* Copyright */
+.copyright {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer .socials-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer .socials-wrapper h4 {
+    margin-bottom: 1rem;
+}
+
+
 
 .footer--area {
     display: flex;
