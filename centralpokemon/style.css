@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background-color: #0f1113;
+    --primary-color: #1991EB;
+    --secondary-color: #FFF;
+    --terciary-color: #8d8d8d;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f1113;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    overflow-x: hidden;
+}
+
+.container-games {
+    padding: 0px 9%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.card-link{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+p {
+    font-size: 1rem;
+    color: rgb(170, 170, 170);
+}
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+.banner-text h2{
+    color: white;
+}
+
+h1 {
+    font-size: 3.3rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+.buttom {
+    display: flex;
+    width: 190px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .3s;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.buttom:hover {
+    background-color: #579fd6;
+}
+
+[data-anime] {
+    opacity: 0;
+    transition: .4s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime="right"] {
+    transform: translate3d(100px, 0, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+/* header */
+
+.background-banner {
+    width: 100vw;
+    background-image: url('/assets/images/banner.png');
+    background-position: center;
+    background-size: cover;
+    background-color: #0f1113;
+}
+
+.header-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0px;
+}
+
+.menu {
+    display: flex;
+    gap: 70px;
+    font-size: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu--item {
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .30s;
+}
+
+.menu--item:hover {
+    border-bottom: 3px solid #1991EB;
+}
+
+.menu-mobile--icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/* Contêiner principal que vai alinhar os itens lado a lado */
+.main-container {
+    display: flex;           /* Alinha os elementos horizontalmente */
+    justify-content: space-between; /* Espaço entre o banner e o carrossel */
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+/* banner */
+.banner {
+    display: flex;
+}
+
+.banner-desc {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1; /* Ocupa o espaço disponível */
+}
+
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-image {
+    display: flex;
+    justify-content: flex-end; /* Move a imagem para a direita */
+    align-items: center; /* Centraliza verticalmente */
+    height: 400px; /* Mantém a altura do banner */
+    padding-right: 20px; /* Espaço entre a imagem e a borda direita */
+    flex: 0; /* A imagem não cresce */
+}
+
+.banner-image img {
+    width: 400px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
+/* Estilizando o contêiner do carrossel */
+#carouselExampleAutoplaying {
+    position: absolute; /* Para posicionamento preciso */
+    bottom: -600px; /* Ajusta a posição para o final da página */
+    left: 100px; /* Alinha à esquerda */
+    width: 650px; /* Reduz a largura */
+    height: 400px; /* Reduz a altura */
+}
+
+/* Estilizando as imagens dentro do carrossel */
+.carousel-item img {
+    height: 400px; /* Mantém a altura dentro do carrossel */
+    width: 100%; /* Ajusta a largura para ocupar o espaço do carrossel */
+    object-fit: cover; /* Mantém a proporção sem distorcer */
+    border-radius: 12px;
+}
+
+/* Ajustando a posição do About para ficar ao lado do carrossel */
+#about-text {
+    position: absolute;
+    bottom: 20px;
+    left: 320px; /* Ajusta para não sobrepor o carrossel */
+    width: 600px; /* Define uma largura confortável */
+    display: flex;
+    gap: 25px;
+}
+
+
+/* info */
+#info {
+    margin-top: 150px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    background-color: #1c1e20;
+    border-radius: 20px;
+    padding: 30px;
+    gap: 20px;
+    margin-top: -100px; /* Ajuste o valor conforme necessário */
+}
+
+.card--image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.card--image img {
+    width: 100%; /* Faz a imagem ocupar todo o espaço disponível dentro do contêiner */
+    height: 100%; /* Faz a imagem ocupar todo o espaço disponível dentro do contêiner */
+    object-fit: contain; /* Garante que a imagem seja redimensionada sem perder proporção */
+}
+
+
+.card--desc {
+    flex: 1;
+    color: white;
+}
+
+/* about */
+#about {
+    display: flex;
+    margin-top: 150px;
+}
+
+.about--image {
+    display: flex;
+    justify-content: start;
+    flex: 1;
+}
+
+.about--image img{
+    width: 100%;
+}
+
+.about--desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+}
+
+
+
+/* community */
+#community {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.community--image {
+    width: 100%;
+}
+
+.community--image--mobile {
+    display: none;
+}
+
+/* footer */
+
+#footer {
+    margin-top: 100px;
+    padding: 50px 0px 20px 0px;
+    width: 100vw;
+    background-color: #0f1113;
+    
+}
+
+.footer--area {
+    display: flex;
+}
+
+.footer--logo {
+    flex: 1;
+}
+
+.footer--links {
+    display: flex;
+    gap: 100px;
+}
+
+.footer--link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.autor {
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+/* games */
+
+.games {
+    margin-top: 70px;
+}
+
+.modal {
+    display: none;
+}
+
+.game-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
+    column-gap: 20px;
+    margin: 70px 0px;
+    transition: all ease 1s;
+}
+
+.game--warning {
+    display: none;
+    text-align: center;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.game--image {
+    width: auto;
+}
+
+.game--image img {
+    width: 100%;
+}
+
+.game--desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.tags-area {
+    display: flex;
+    align-items: cente;
+    justify-content: space-between;
+}
+
+.tag--genre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #252B33;
+    width: 100px;
+    height: 35px;
+    font-size: 0.9rem;
+}
+
+.filters-dropdown--area {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-platform,
+.filter-genre {
+    position: relative;
+}
+
+.filter-desc--platform,
+.filter-desc--genre {
+    display: flex;
+    gap: 10px;
+}
+
+.currentSelected--platform,
+.currentSelected--genre {
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.filter-options--platform,
+.filter-options--genre {
+    background-color: #252B33;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-options--platform.closed,
+.filter-options--genre.closed {
+    display: none;
+}
+
+.dropdown--filter {
+    cursor: pointer;
+}
+
+.filter--item--platform,
+.filter--item--genre {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.search-game {
+    display: block;
+    max-width: 700px;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0px 20px;
+    background-color: #252B33;
+    border: 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.search-game:focus {
+    outline: none;
+}
+
+
+
+@media (max-width: 850px) {
+
+    html {
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 60px;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(1, 1fr);  
+    }
+}
+
+@media (max-width: 850px) {
+
+    .menu-desktop {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile.closed {
+        display: none;
+    }
+
+    .menu-mobile.open {
+        display: block;
+    }
+
+
+    .menu-mobile--icon {
+        display: block;
+    }
+
+    .menu-mobile--item {
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+
+    .menu-mobile--item:hover {
+        background-color: #1991EB;
+    }
+
+    .banner {
+        margin-top: 70px;
+    }
+
+    .banner-image {
+        display: none;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 30px;
+    }
+
+    #about {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .community--image {
+        display: none;
+    }
+
+    .community--image--mobile {
+        display: block;
+        width: 100%;
+    }
+
+    .footer--area {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer--links {
+        gap: 50px;
+    }
+
+    .game-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filter-area {
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    
+    .game-area {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
