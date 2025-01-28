@@ -17,8 +17,14 @@ Bem-vindo à **Central Pokemon**! Este projeto é um site dedicado a explorar o 
 - **Bootstrap**: Framework utilizado para o design responsivo e elementos UI prontos (como o carrossel de imagens).
 - **Imagens**: Utilização de imagens do universo Pokémon para enriquecer a experiência visual.
 
+## Screenshots:
 
-## Como Rodar o Projeto
+![centralpokemon1](https://github.com/user-attachments/assets/86c57c66-7982-4c3c-b7cc-b6dbc352607e)
+![centralpokemon2](https://github.com/user-attachments/assets/cac70796-2b0a-4a12-a989-1fb59b8f6731)
+![centralpokemon3](https://github.com/user-attachments/assets/3b3eb7bb-9100-43a2-9f78-76908d88d82d)
+
+
+## Como Rodar o Projeto:
 
 ### 1. Clone o repositório
 
