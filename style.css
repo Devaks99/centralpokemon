@@ -334,7 +334,6 @@ span {
 }
 
 /* footer */
-
 #footer {
     margin-top: 160px;
     padding: 50px 0px 20px 0px;
@@ -439,14 +438,8 @@ footer .socials-wrapper h4 {
     gap: 10px;
 }
 
-.autor {
-    margin-top: 70px;
-    width: 100%;
-    text-align: center;
-}
 
 /* games */
-
 .games {
     margin-top: 70px;
 }
