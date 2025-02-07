@@ -31,7 +31,7 @@ Bem-vindo à **Central Pokemon**! Este projeto é um site dedicado a explorar o 
 Primeiro, faça o clone deste repositório em sua máquina local.
 
 ```bash
-git clone https://github.com/seu-usuario/centralpokemon.git
+git clone https://github.com/Devaks99/centralpokemon.git
 Depois de clonar o repositório, abra o arquivo index.htmlem um navegador de sua escolha.
 open index.html
 
