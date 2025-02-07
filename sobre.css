@@ -1,36 +1,37 @@
 /* html */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'Mooli', sans-serif;
-    }
-    
-    html{
-      scroll-behavior: smooth;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mooli', sans-serif;
+}
 
-    /* todo corpo da pagina */
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden; /* Impede scroll horizontal */
-  }
-  
-  body {
-      background-color: #c9c9c9;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+/* todo corpo da pagina */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* overflow-x: hidden;  Impede scroll horizontal */
+}
+
+body {
+  background-color: #c9c9c9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 
-.container-fluid{
-    background-color: #0f1113;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
+.container-fluid {
+  background-color: #0f1113;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 
@@ -40,7 +41,8 @@
   height: 200px;
   display: flex;
   align-items: center;
-  padding: 10px 0; /* Mantém o padding vertical mas remove o horizontal */
+  padding: 10px 0;
+  /* Mantém o padding vertical mas remove o horizontal */
   width: 100%;
   position: relative;
   margin: 0;
@@ -67,6 +69,74 @@
 .nav-link:hover {
   color: rgb(255, 239, 16);
 }
+
+/* Ajustes para o menu mobile */
+.navbar-toggler {
+  margin-left: auto;
+  /* Alinha o toggle à direita */
+  order: 2;
+  /* Coloca o toggle após os logos */
+  border: 2px solid #fff;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ajuste do container quando expandido */
+.navbar-collapse {
+  background-color: #0f1113;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  z-index: 1000;
+  position: relative;
+}
+
+@media (max-width: 993px) {
+  .navbar {
+    top: -30px;
+  }
+
+}
+
+/* Espaçamento extra para o body quando menu aberto */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+    /* Espaço para o header fixo */
+  }
+
+  .navbar {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .logo-container {
+    width: auto;
+    margin-right: auto;
+  }
+
+  .games-container {
+    min-height: calc(100vh - 120px);
+    padding-top: 2rem;
+  }
+}
+
 /* fim do navbar (header) */
 
 
@@ -78,168 +148,206 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  perspective: 1000px; /* Cria espaço 3D para efeito de profundidade */
-  margin-top: 40px; /* Espaçamento adicional */
+  perspective: 1000px;
+  /* Cria espaço 3D para efeito de profundidade */
+  margin-top: 40px;
+  /* Espaçamento adicional */
 }
 
-.img-card{
+.img-card {
   position: relative;
   overflow: hidden;
   border: 3px solid #000000c4;
   border-radius: 13px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform-origin: center center; /* Garante que o zoom seja centralizado */
+  transform-origin: center center;
+  /* Garante que o zoom seja centralizado */
   transform-style: preserve-3d;
 }
 
 .img-card img {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #000000c4;
-    border-radius: 13px;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  height: 100%;
+  border: 3px solid #000000c4;
+  border-radius: 13px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .img-card:hover {
-  z-index: 2; /* Garante que a imagem aumentada fique sobre outros elementos */
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3); /* Efeito de profundidade adicional */
+  z-index: 2;
+  /* Garante que a imagem aumentada fique sobre outros elementos */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  /* Efeito de profundidade adicional */
   transform: scale(1.05) translateZ(20px);
+}
+
+.img-card:hover img {
+  transform: scale(1.05);
+  /* Zoom mais suave */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .img-card {
+    border: none;
+  }
+
+  .img-card img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .img-card:hover {
+    transform: scale(1.05) translateZ(2px);
+    box-shadow: none;
+    border-radius: 13px;
   }
 
   .img-card:hover img {
-    transform: scale(1.05); /* Zoom mais suave */
-    cursor: pointer;
+    border-radius: 13px;
+    transform: none;
+  }
 }
+
 /* fim dos cards */
 
 
-  /* Regras de mídia para telas menores */
+/* Regras de mídia para telas menores */
 @media screen and (max-width: 768px) {
-    body {
-        height: auto; /* Altura automática */
-    }
+  body {
+    height: auto;
+    /* Altura automática */
+  }
 
-    .navbar {
-        height: 80px; /* Altura reduzida para telas menores */
-    }
+  .navbar {
+    height: 80px;
+    /* Altura reduzida para telas menores */
+  }
 
-    .navbar-nav {
-        margin: 20px; /* Margem reduzida para telas menores */
-    }
+  .navbar-nav {
+    margin: 20px;
+    /* Margem reduzida para telas menores */
+  }
 }
 
 /* Regras de mídia para telas maiores */
 @media screen and (min-width: 1200px) {
-    .img-card {
-        margin-top: 40px; /* Espaçamento reduzido para telas maiores */
-    }
-
-    .modal-content {
-        max-width: 600px; /* Largura aumentada para telas maiores */
-    }
-}
-  
-  /* Estilo das logos */
-  .logo-container {
-    display: flex;
-    align-items: center;
+  .img-card {
+    margin-top: 40px;
+    /* Espaçamento reduzido para telas maiores */
   }
-  
+
+  .modal-content {
+    max-width: 600px;
+    /* Largura aumentada para telas maiores */
+  }
+}
+
+/* Estilo das logos */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-pokebola {
+  width: 56px;
+  height: auto;
+}
+
+.logo-central {
+  max-height: 75px;
+  height: auto;
+  margin-left: 10px;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-container {
+    max-width: 300px;
+  }
+
   .logo-pokebola {
     width: 56px;
     height: auto;
   }
-  
+
+  /* Estilo para a logo central */
   .logo-central {
     max-height: 75px;
-    height: auto;
-    margin-left: 10px;
   }
-  
-  /* Media queries para responsividade */
+
+  /* Media query para telas menores */
   @media screen and (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar-nav {
-      flex-direction: column;
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    .nav-link {
-      margin: 10px 0;
-      width: 100%;
-      text-align: center;
-    }
-  
-    .logo-container {
-      max-width: 300px;
-    }
     .logo-pokebola {
-      width: 56px;
-      height: auto;
-      }
-      
-      /* Estilo para a logo central */
-      .logo-central {
-        max-height: 75px;
-      }
-      
-      /* Media query para telas menores */
-      @media screen and (max-width: 768px) {
-        .logo-pokebola {
-            max-width: 100px; /* Reduzindo a largura da imagem para telas menores */
-        }
-      
-        .logo-central {
-            max-width: 180px; /* Reduzindo a largura da imagem para telas menores */
+      max-width: 100px;
+      /* Reduzindo a largura da imagem para telas menores */
+    }
 
-        }
-      }}
-  
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.9);
-      }
-      
-      .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 430px;
-        max-height: 450%;
-        margin-top: 50px;
-      }
-      
-      .close {
-        color: white;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-        cursor: pointer;
-      }
+    .logo-central {
+      max-width: 180px;
+      /* Reduzindo a largura da imagem para telas menores */
+
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 430px;
+  max-height: 450%;
+  margin-top: 50px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
 
 
-      /* footer */
+/* footer */
 #footer {
   margin-top: 160px;
   padding: 50px 0px 20px 0px;
-  width: 100vw;
   background-color: #0f1113;
-  height: auto; /* Ajustado para não ocupar 100% da altura */
+  height: auto;
+  /* Ajustado para não ocupar 100% da altura */
 }
 
 footer .column p {
@@ -249,7 +357,8 @@ footer .column p {
 
 footer .column .socials {
   display: flex;
-  justify-content: center; /* Alinha os itens horizontalmente */
+  justify-content: center;
+  /* Alinha os itens horizontalmente */
   gap: 1.5rem;
   margin-bottom: 20px;
 }
@@ -283,17 +392,18 @@ footer .column h4 {
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
   font-weight: 600;
-  text-align: center; /* Centraliza o título */
+  text-align: center;
+  /* Centraliza o título */
 }
 
-footer .column > a {
+footer .column>a {
   display: block;
   color: #ccc;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
-footer .column > a:hover {
+footer .column>a:hover {
   color: #1d4ed8;
   transform: translateX(5px);
 }
@@ -337,135 +447,143 @@ footer .socials-wrapper h4 {
   gap: 10px;
 }
 
+/* button scroll-top */
+.scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  background-color: #0f1113;
+  color: #fff;
+  border: 1px solid darkorange;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 15px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
 
+.scroll-top:hover {
+  background-color: darkorange;
+  color: #0f1113;
+  border: 1px solid #0f1113;
+}
+
+@media screen and (max-width: 720px) {
+  .scroll-top {
+    font-size: 14px;
+    right: 22px;
+    bottom: 24px;
+  }
+
+  .modal-content {
+    margin-top: 50%;
+  }
+
+  .close {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    font-size: 40px;
+
+  }
+}
 
 @media (max-width: 850px) {
 
   html {
-      font-size: 13px;
+    font-size: 13px;
   }
 
   .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 60px;
   }
 
   .info-cards {
-      grid-template-columns: repeat(1, 1fr);  
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media (max-width: 850px) {
 
   .menu-desktop {
-      display: none;
+    display: none;
   }
 
   .menu {
-      display: none;
+    display: none;
   }
 
   .menu-mobile.closed {
-      display: none;
+    display: none;
   }
 
   .menu-mobile.open {
-      display: block;
+    display: block;
   }
 
 
   .menu-mobile--icon {
-      display: block;
+    display: block;
   }
 
   .menu-mobile--item {
-      padding: 15px;
-      text-transform: uppercase;
-      font-size: 1.2rem;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
   .menu-mobile--item:hover {
-      background-color: #1991EB;
+    background-color: #1991EB;
   }
 
   .banner {
-      margin-top: 70px;
+    margin-top: 70px;
   }
 
   .banner-image {
-      display: none;
+    display: none;
   }
 
   .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 30px;
   }
 
   #about {
-      flex-direction: column;
-      gap: 50px;
+    flex-direction: column;
+    gap: 50px;
   }
 
   .community--image {
-      display: none;
+    display: none;
   }
 
   .community--image--mobile {
-      display: block;
-      width: 100%;
+    display: block;
+    width: 100%;
   }
 
   .footer--area {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
 
   .footer--links {
-      gap: 50px;
+    gap: 50px;
   }
 
   .game-area {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .filter-area {
-      flex-direction: column;
-  }
-}
-
-.scroll-top {
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  bottom: 60px;
-  right: 50px;
-  background-color: #1d4ed8; /* Cor azul */
-  color: white;
-  border: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-  padding: 25px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.scroll-top:hover {
-  background-color: #1439a1; /* Cor mais escura ao passar o mouse */
-}
-
-.scroll-top.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media screen and (max-width: 720px) {
-  .scroll-top {
-    padding: 15px;
-    font-size: 18px;
+    flex-direction: column;
   }
 }

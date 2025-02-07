@@ -7,6 +7,11 @@
     font-family: 'Oxanium'cursive;
 }
 
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
 body{
     text-align: center;
     background-color: #c9c9c9;
@@ -72,7 +77,7 @@ body{
     .navbar-nav {
       flex-direction: column;
       width: 100%;
-      margin-top: 10px;
+      margin-top: 40px;
     }
   
     .nav-link {
@@ -106,7 +111,6 @@ body{
         }
       }}
 
-
 /* Linha separadora */
 .section-divider {
     border-top: 3px solid #0f1113;
@@ -114,6 +118,36 @@ body{
     width: 80%;
 }
     
+/* button scroll-top */
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    background-color: #0f1113;
+    color: #fff;
+    border: 1px solid darkorange;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 15px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top:hover{
+    background-color: darkorange;
+    color: #0f1113;
+    border: 1px solid #0f1113;
+}
+
+@media screen and (max-width: 720px) {
+    .scroll-top {
+        font-size: 14px;
+    }
+}
+
 /* Container principal */
 .games-container {
     min-height: calc(100vh - 200px);
@@ -279,8 +313,6 @@ footer .socials-wrapper h4 {
     margin-bottom: 1rem;
 }
 
-
-
 .footer--area {
     display: flex;
 }
@@ -299,7 +331,6 @@ footer .socials-wrapper h4 {
     flex-direction: column;
     gap: 10px;
 }
-
 
 
 @media (max-width: 850px) {
@@ -397,5 +428,75 @@ footer .socials-wrapper h4 {
     .filter-area {
         flex-direction: column;
     }
+}
+
+/* Ajustes para o menu mobile */
+.navbar-toggler {
+    margin-left: auto; /* Alinha o toggle à direita */
+    order: 2; /* Coloca o toggle após os logos */
+    border: 2px solid #fff;
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ajuste do container quando expandido */
+.navbar-collapse {
+    background-color: #0f1113;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    z-index: 1000;
+    position: relative;
+}
+
+/* Espaçamento extra para o body quando menu aberto */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* Espaço para o header fixo */
+    }
     
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        right: 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    
+    .logo-container {
+        width: auto;
+        margin-right: auto;
+    }
+    
+    .games-container {
+        min-height: calc(100vh - 120px);
+        padding-top: 2rem;
+    }
+}
+
+/* Garante que o conteúdo não fique escondido */
+@media (max-width: 768px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 5px 0;
+        background-color: rgba(255,255,255,0.05);
+        border-radius: 4px;
+    }
 }

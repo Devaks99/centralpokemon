@@ -113,6 +113,36 @@ span {
     background-color: #579fd6;
 }
 
+/* button scroll-top */
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 65px;
+    background-color: #0f1113;
+    color: #fff;
+    border: 1px solid darkorange;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 15px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top:hover{
+    background-color: darkorange;
+    color: #0f1113;
+    border: 1px solid #0f1113;
+}
+
+@media screen and (max-width: 720px) {
+    .scroll-top {
+        font-size: 14px;
+    }
+}
+
 [data-anime] {
     opacity: 0;
     transition: .4s;
