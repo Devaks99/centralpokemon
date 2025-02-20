@@ -1,0 +1,629 @@
+/* html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mooli', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* todo corpo da pagina */
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    /* overflow-x: hidden;  Impede scroll horizontal */
+  }
+  
+  body {
+    background-color: #c9c9c9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  
+  .container-fluid {
+    background-color: #0f1113;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  
+  /* Estilo da navbar/ header */
+  .navbar {
+    background-color: #0f1113; /* Corrigido para combinar com jogos.css */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    margin: 0;
+  }
+  
+  /* Caixa de navegação */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    /* padding: 0; */
+    list-style: none;
+  }
+  /* Cor dos links na barra de navegação */
+  .nav-link {
+    color: #fff;
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* margin: 0 10px; */
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: rgb(255, 239, 16);
+  }
+  
+  
+  /* Ajustes para o menu mobile */
+  .navbar-toggler {
+    margin-left: auto;
+    /* Alinha o toggle à direita */
+    order: 2;
+    /* Coloca o toggle após os logos */
+    border: 2px solid #fff;
+    padding: 0.5rem;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  /* Ajuste do container quando expandido */
+  .navbar-collapse {
+    background-color: #0f1113;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    z-index: 0;
+    position: relative;
+  }
+  
+  @media (max-width: 993px) {
+    .navbar {
+      top: -30px;
+    }
+  
+  }
+  
+  /* Espaçamento extra para o body quando menu aberto */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 80px;
+    }
+  
+    .navbar {
+      position: fixed; 
+      top: 0;
+      height: auto;
+      padding: 10px 0;
+      z-index: 1030;
+    }
+  
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      z-index: 1000; 
+    }
+  
+    .navbar-nav {
+      padding: 1rem 0; /* Adicionado padding */
+    }
+  
+    .nav-link {
+      padding: 0.75rem 1rem; /* Aumentado touch area */
+      margin: 5px 0;
+      background-color: rgba(255,255,255,0.05); /* Efeito de fundo nos links */
+      border-radius: 4px;
+    }
+  
+    .logo-container {
+      width: 100%;
+      justify-content: center; /* Centralização mobile */
+    }
+  
+    .logo-container {
+      width: auto;
+      margin-right: auto;
+    }
+  
+    .games-container {
+      min-height: calc(100vh - 120px);
+      padding-top: 2rem;
+    }
+  }
+  
+  
+  
+  
+  /*Todas as imagens dos cards*/
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    perspective: 1000px;
+    margin-top: 40px;
+  }
+  
+  .img-card {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Borda mais suave */
+    border-radius: 13px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Timing function mais suave */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra sutil padrão */
+    transform: translateZ(0); /* Otimização de performance */
+  }
+  
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    border: none; /* Removi a borda da imagem */
+    border-radius: 11px; /* Ajuste para combinar com o card */
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .img-card:hover {
+    transform: scale(1.03); /* Zoom mais suave */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    z-index: 1;
+  }
+  
+  .img-card:hover img {
+    transform: scale(1.02); /* Zoom mínimo na imagem */
+    cursor: pointer;
+  }
+  
+  /* Efeito de levantamento suave */
+  @keyframes card-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  
+  /* Responsividade */
+  /* Aplica apenas o hover em dispositivos não móveis */
+  @media (hover: hover) and (pointer: fine) {
+    .img-card:hover {
+      animation: card-float 1.5s ease-in-out infinite;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .img-card {
+      border: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .img-card:hover {
+      transform: none;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .img-card:hover img {
+      transform: none;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    body {
+      height: auto;
+      /* Altura automática */
+    }
+  
+    .navbar {
+      height: 80px;
+    }
+  
+    .navbar-nav {
+      margin: 20px;
+    }
+  
+    .logo-pokebola {
+      max-width: 90px;
+    }
+  
+    .logo-central {
+      max-width: 180px;
+    }
+  
+    .navbar-toggler {
+      margin-right: 0; /* Espaçamento consistente */
+    }
+  
+    .nav-link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Regras de mídia para telas maiores */
+  @media screen and (min-width: 1200px) {
+    .img-card {
+      margin-top: 40px;
+      /* Espaçamento reduzido para telas maiores */
+    }
+  
+    .modal-content {
+      max-width: 600px;
+      /* Largura aumentada para telas maiores */
+    }
+  }
+  
+  /* Estilo das logos */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-pokebola {
+    width: 56px;
+    height: auto;
+  }
+  
+  .logo-central {
+    max-height: 75px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  /* Media queries para responsividade */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: -10px;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 40px;
+      margin-left: 0;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .logo-container {
+      max-width: 300px;
+    }
+  
+    .logo-pokebola {
+      width: 56px;
+      height: auto;
+      margin-left: -10px;
+    }
+  
+    /* Estilo para a logo central */
+    .logo-central {
+      max-height: 75px;
+    }
+  
+    /* Media query para telas menores */
+    @media screen and (max-width: 768px) {
+      .logo-pokebola {
+        max-width: 100px;
+       
+      }
+  
+      .logo-central {
+        max-width: 180px;
+      }
+  
+      .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 5px 0;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+    }
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 430px;
+    max-height: 450%;
+    margin-top: 50px;
+  }
+  
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  
+  /* footer */
+  #footer {
+    margin-top: 160px;
+    padding: 50px 0px 20px 0px;
+    background-color: #0f1113;
+    height: auto;
+    /* Ajustado para não ocupar 100% da altura */
+  }
+  
+  footer .column p {
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  footer .column .socials {
+    display: flex;
+    justify-content: center;
+    /* Alinha os itens horizontalmente */
+    gap: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  footer .column .socials a {
+    color: #ccc;
+    border: 2px solid #ccc;
+    padding: 12px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 48px;
+    height: 48px;
+  }
+  
+  footer .column .socials a:hover {
+    color: #fff;
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: scale(1.15);
+    box-shadow: 0px 6px 12px rgba(29, 78, 216, 0.4);
+  }
+  
+  /* Estilização dos títulos e links do footer */
+  footer .column h4 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    /* Centraliza o título */
+  }
+  
+  footer .column>a {
+    display: block;
+    color: #ccc;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  footer .column>a:hover {
+    color: #1d4ed8;
+    transform: translateX(5px);
+  }
+  
+  /* Copyright */
+  .copyright {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  footer .socials-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  footer .socials-wrapper h4 {
+    margin-bottom: 1rem;
+  }
+  
+  
+  .footer--area {
+    display: flex;
+  }
+  
+  .footer--logo {
+    flex: 1;
+  }
+  
+  .footer--links {
+    display: flex;
+    gap: 100px;
+  }
+  
+  .footer--link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* button scroll-top */
+  .scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #0f1113;
+    color: #fff;
+    border: 1px solid darkorange;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 15px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .scroll-top:hover {
+    background-color: darkorange;
+    color: #0f1113;
+    border: 1px solid #0f1113;
+  }
+  
+  @media screen and (max-width: 720px) {
+    .scroll-top {
+      font-size: 14px;
+      right: 22px;
+      bottom: 24px;
+    }
+  
+    .modal-content {
+      margin-top: 50%;
+    }
+  
+    .close {
+      position: fixed;
+      top: 100px;
+      right: 30px;
+      font-size: 40px;
+  
+    }
+  }
+  
+  @media (max-width: 850px) {
+  
+    html {
+      font-size: 13px;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0px 60px;
+    }
+  
+    .info-cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 850px) {
+  
+    .menu-desktop {
+      display: none;
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    .menu-mobile.closed {
+      display: none;
+    }
+  
+    .menu-mobile.open {
+      display: block;
+    }
+  
+  
+    .menu-mobile--icon {
+      display: block;
+    }
+  
+    .menu-mobile--item {
+      padding: 15px;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+  
+    .menu-mobile--item:hover {
+      background-color: #1991EB;
+    }
+  
+    .banner {
+      margin-top: 70px;
+    }
+  
+    .banner-image {
+      display: none;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0px 30px;
+    }
+  
+    #about {
+      flex-direction: column;
+      gap: 50px;
+    }
+  
+    .community--image {
+      display: none;
+    }
+  
+    .community--image--mobile {
+      display: block;
+      width: 100%;
+    }
+  
+    .footer--area {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .footer--links {
+      gap: 50px;
+    }
+  
+    .game-area {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .filter-area {
+      flex-direction: column;
+    }
+  }

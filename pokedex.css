@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium'cursive;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body{
+    text-align: center;
+    background-color: #c9c9c9;
+    height: 100vh;
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: #0f1113;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+  
+  /* Caixa de navegação */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Cor dos links na barra de navegação */
+  .nav-link {
+    color: #fff;
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  /* Links na barra de navegação quando passa o mouse */
+  .nav-link:hover {
+    color: rgb(255, 239, 16);
+  }
+  
+/* Ajustes para o menu mobile */
+.navbar-toggler {
+  margin-left: auto;
+  order: 2;
+  border: 2px solid #fff;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ajuste do container quando expandido */
+.navbar-collapse {
+  background-color: #0f1113;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  z-index: 1000;
+  position: relative;
+}
+
+@media (max-width: 993px) {
+  .navbar {
+    top: -30px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding-top: 40px; /* Ajuste o espaço superior conforme necessário */
+  }
+
+  .logo-central {
+    margin-top: 0; /* Ajuste o valor conforme necessário para centralizar mais */
+  }
+}
+
+
+/* Espaçamento extra para o body quando menu aberto */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+    /* Espaço para o header fixo */
+  }
+}
+  .navbar {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+
+  /* Estilo das logos */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-pokebola {
+    width: 56px;
+    height: auto;
+  }
+  
+  .logo-central {
+    max-height: 75px;
+    height: auto;
+    margin-left: 20px;
+  }
+  
+  /* Media queries para responsividade */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .logo-container {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .logo-pokebola {
+        max-width: 150px; /* Largura máxima da imagem */
+      }
+      
+      /* Estilo para a logo central */
+      .logo-central {
+        max-width: 350px; /* Largura máxima da imagem */
+        margin-left: 20px; ;
+      }
+     
+      
+
+      /* Media query para telas menores */
+      @media screen and (max-width: 768px) {
+        .logo-pokebola {
+            max-width: 90px; /* Reduzindo a largura da imagem para telas menores */
+        }
+      
+        .logo-central {
+            max-width: 180px; /* Reduzindo a largura da imagem para telas menores */
+        }
+
+        .nav-link {
+          padding: 0.75rem 1rem;
+          margin: 5px 0;
+          background-color: rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+      }
+      .navbar-toggler {
+        margin-right: 10px; /* Espaçamento consistente */
+      }
+      }}
+
+
+main{
+    display: inline-block;
+    margin-top: 2%;
+    padding: 15px;
+    position: relative;
+    text-align: center; /* Mantém o alinhamento centralizado */
+}
+
+.pokedex{
+    width: 80%;
+    max-width: 425px;
+    margin-top: 180px;
+    margin-left: 0; /* Remove qualquer centralização da Pokédex */
+    margin-right: 0; /* Garante que a Pokédex fique alinhada à esquerda */
+}
+
+.pokemon_image {
+position: absolute;
+left: 50%;
+bottom: 40%;
+transform: translate(-63%, 20%);
+height: 14%;
+}
+
+.pokemon_data{
+    position: absolute;
+    font-weight: 800;
+    color:#aaa;
+    top: 66%;
+    right: 32.5%;
+    font-size: clamp(8px,3vw,22px);
+}
+
+.pokemon_name{
+    color: #3a444d;
+    text-transform: capitalize;
+    font-size: 17px;
+   
+}
+
+.form{
+    position: absolute;
+    width: 65%;
+    top: 65%;
+    left: 15.5%;
+}
+
+.by{
+margin: 20px auto;
+font-size: 12px;
+color: #272f36;
+background-color: #ffffff41;
+border-radius: 8px;
+width: 50%;
+padding: 1px;
+}
+
+
+.input_search{
+    width: 75%;
+    padding: 3%;
+    margin-top: 60px;
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 630;
+    color: #3a444d;
+    font-size:clamp(8px,3vw,0.8rem);
+    box-shadow:-3px 4px 0 #888, -5px 7px 0 #333; /* (x,y, tamanho da sombra, cor da sombra) */
+    } 
+
+
+    .buttons{
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        width: 45%;
+        transform: translate(-57%, 0);
+        display: flex;
+        gap: 20px;
+    }
+
+    .button{
+        width: 50%;
+        padding: 2%;
+        border: 2px solid #000;
+        border-radius: 5px;
+        font-size: clamp(5px, 4vw,0.78rem);
+        font-weight: 600;
+        color: white;
+        background-color: #444;
+        box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+    }
+
+    .button:active{
+       box-shadow: inset -4px -4px 0 #222;
+       font-size: 0.8rem;
+    }
+
+
+    /* Media Query para dispositivos com largura máxima de 768px (tablet e dispositivos móveis em modo paisagem) */
+@media only screen and (max-width: 768px) {
+    main {
+        margin-top: 5%;
+    }
+
+    .pokedex {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .by{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 12px;
+    }
+
+    .input_search{
+        font-size: 15px;
+        width: 70%;
+        margin-top: 15px;
+    }
+    .pokemon_image{
+      position: absolute;
+    left: 50%;
+    bottom: 49%;
+    transform: translate(-63%, 20%);
+    height: 18%;
+    }
+
+    .form {
+        width: 80%;
+        left: 10%;
+    }
+    .button{
+        width: 50%;
+        padding: 3%;
+        font-size: 14px;
+       
+    }
+    .pokemon_name,
+    .pokemon_data{
+        font-size: 18px;
+        top: 337px;
+    }
+}
+
+/* footer */
+#footer {
+  margin-top: 160px;
+  padding: 50px 0px 20px 0px;
+  width: 100vw;
+  background-color: #0f1113;
+  height: auto; /* Ajustado para não ocupar 100% da altura */
+}
+
+footer .column p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+footer .column .socials {
+  display: flex;
+  justify-content: center; /* Alinha os itens horizontalmente */
+  gap: 1.5rem;
+  margin-bottom: 20px;
+}
+
+footer .column .socials a {
+  color: #ccc;
+  border: 2px solid #ccc;
+  padding: 12px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 48px;
+  height: 48px;
+}
+
+footer .column .socials a:hover {
+  color: #fff;
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: scale(1.15);
+  box-shadow: 0px 6px 12px rgba(29, 78, 216, 0.4);
+}
+
+/* Estilização dos títulos e links do footer */
+footer .column h4 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center; /* Centraliza o título */
+}
+
+footer .column > a {
+  display: block;
+  color: #ccc;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+footer .column > a:hover {
+  color: #1d4ed8;
+  transform: translateX(5px);
+}
+
+/* Copyright */
+.copyright {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+footer .socials-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer .socials-wrapper h4 {
+  margin-bottom: 1rem;
+}
+
+
+
+.footer--area {
+  display: flex;
+}
+
+.footer--logo {
+  flex: 1;
+}
+
+.footer--links {
+  display: flex;
+  gap: 100px;
+}
+
+.footer--link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+@media (max-width: 850px) {
+
+  html {
+      font-size: 13px;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0px 60px;
+  }
+
+  .info-cards {
+      grid-template-columns: repeat(1, 1fr);  
+  }
+}
+
+@media (max-width: 850px) {
+
+  .menu-desktop {
+      display: none;
+  }
+
+  .menu {
+      display: none;
+  }
+
+  .menu-mobile.closed {
+      display: none;
+  }
+
+  .menu-mobile.open {
+      display: block;
+  }
+
+
+  .menu-mobile--icon {
+      display: block;
+  }
+
+  .menu-mobile--item {
+      padding: 15px;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+  }
+
+  .menu-mobile--item:hover {
+      background-color: #1991EB;
+  }
+
+  .banner {
+      margin-top: 70px;
+  }
+
+  .banner-image {
+      display: none;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0px 30px;
+  }
+
+  #about {
+      flex-direction: column;
+      gap: 50px;
+  }
+
+  .community--image {
+      display: none;
+  }
+
+  .community--image--mobile {
+      display: block;
+      width: 100%;
+  }
+
+  .footer--area {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+  }
+
+  .footer--links {
+      gap: 50px;
+  }
+
+  .game-area {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filter-area {
+      flex-direction: column;
+  }
+  
+}
