@@ -1,6 +1,6 @@
 **Central Pokémon**
- 
-![pokebo](https://github.com/user-attachments/assets/bfc6da4e-9fb0-4d6f-b310-85f9d63ffbd9)
+
+![pokebo-removebg-preview](https://github.com/user-attachments/assets/ee1ccc55-2f17-41e4-bdfe-66949350d24a)
 
 
 🎉 **Bem-vindo à Central Pokémon!** 🎉
