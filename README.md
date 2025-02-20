@@ -1,6 +1,7 @@
 **Central Pokémon**
  
-![pokebo-removebg-preview](https://github.com/user-attachments/assets/9ad9f55d-f905-4d55-a2f2-31e9de82ed38) 
+![pokebo](https://github.com/user-attachments/assets/bfc6da4e-9fb0-4d6f-b310-85f9d63ffbd9)
+
 
 🎉 **Bem-vindo à Central Pokémon!** 🎉
 
@@ -30,9 +31,9 @@ Este projeto é um site dedicado a explorar o fascinante mundo dos Pokémon. Ofe
 ## 📸 Screenshots
 
 Confira abaixo algumas capturas de tela do projeto:
-![tela1 centralpokemon](https://github.com/user-attachments/assets/bedbbbba-cdda-4bc8-ab9a-af34b3ded8ae)
-![tela2 centralpokemon](https://github.com/user-attachments/assets/69a63c9a-13f9-4686-b1fe-4cf5140d4246)
-![tela3 centralpokemon](https://github.com/user-attachments/assets/9e772bef-ce28-465c-92fa-43ae48fc3f60)
+![tela1 centralpokemon](https://github.com/user-attachments/assets/a7923a93-2986-42b3-87f4-acb46c309dcc)
+![tela2 centralpokemon](https://github.com/user-attachments/assets/96a4fbcc-abc2-4715-834c-aec3f15dbaff)
+![tela3 centralpokemon](https://github.com/user-attachments/assets/56df9ff7-b39d-4958-8e94-18156ab4f1d0)
 
 
 
